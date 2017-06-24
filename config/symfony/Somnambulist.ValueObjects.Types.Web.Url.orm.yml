@@ -1,0 +1,8 @@
+Somnambulist\ValueObjects\Types\Web\Url:
+    type: embeddable
+
+    fields:
+        value:
+            type: string
+            column: url
+            length: 255

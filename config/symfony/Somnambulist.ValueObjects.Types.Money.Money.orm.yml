@@ -1,0 +1,13 @@
+Somnambulist\ValueObjects\Types\Money\Money:
+    type: embeddable
+
+    fields:
+        amount:
+            type: decimal
+            precision: 14
+            scale: 4
+            options:
+                default: 0.0
+
+        currency:
+            type: Somnambulist\ValueObjects\Types\Money\Currency

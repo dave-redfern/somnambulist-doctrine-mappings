@@ -1,0 +1,12 @@
+Somnambulist\ValueObjects\Types\Geography\Coordinate:
+    type: embeddable
+
+    fields:
+        latitude:
+            type: float
+
+        longitude:
+            type: float
+
+        srid:
+            type: Somnambulist\ValueObjects\Types\Geography\Srid

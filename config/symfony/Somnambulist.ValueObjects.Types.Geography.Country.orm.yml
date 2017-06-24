@@ -1,0 +1,10 @@
+Somnambulist\ValueObjects\Types\Geography\Country:
+    type: embeddable
+
+    fields:
+        name:
+            type: string
+            length: 100
+
+        code:
+            type: Somnambulist\ValueObjects\Types\Geography\CountryCode

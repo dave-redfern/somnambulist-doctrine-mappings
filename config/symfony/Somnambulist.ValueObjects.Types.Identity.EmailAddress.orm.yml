@@ -1,0 +1,7 @@
+Somnambulist\ValueObjects\Types\Identity\EmailAddress:
+    type: embeddable
+
+    fields:
+        email:
+            type: string
+            length: 255

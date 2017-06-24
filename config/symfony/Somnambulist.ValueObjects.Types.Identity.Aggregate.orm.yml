@@ -1,0 +1,11 @@
+Somnambulist\ValueObjects\Types\Identity\Aggregate:
+    type: embeddable
+
+    fields:
+        class:
+            type: string
+            length: 255
+
+        identity:
+            type: string
+            length: 100

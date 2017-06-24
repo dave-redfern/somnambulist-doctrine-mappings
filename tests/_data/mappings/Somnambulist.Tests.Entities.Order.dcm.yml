@@ -1,0 +1,27 @@
+Somnambulist\Tests\Entities\Order:
+    type: entity
+    table: orders
+
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+
+    embedded:
+        orderRef:
+            class: Somnambulist\ValueObjects\Types\Identity\Uuid
+            columnPrefix: false
+
+        purchaser:
+            class: Somnambulist\Tests\Entities\ValueObjects\Purchaser
+
+        total:
+            class: Somnambulist\ValueObjects\Types\Money\Money
+
+    fields:
+        properties:
+            type: json_collection
+
+        createdAt:
+            type: datetime

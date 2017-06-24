@@ -1,0 +1,13 @@
+Somnambulist\ValueObjects\Types\Measure\Area:
+    type: embeddable
+
+    fields:
+        value:
+            type: decimal
+            precision: 14
+            scale: 3
+            options:
+                default: 0.0
+
+        unit:
+            type: Somnambulist\ValueObjects\Types\Measure\AreaUnit

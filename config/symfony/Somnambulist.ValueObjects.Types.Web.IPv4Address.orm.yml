@@ -1,0 +1,8 @@
+Somnambulist\ValueObjects\Types\Web\IPv4Address:
+    type: embeddable
+
+    fields:
+        value:
+            type: string
+            column: ip_address
+            length: 15

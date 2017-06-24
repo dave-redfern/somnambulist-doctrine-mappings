@@ -1,0 +1,11 @@
+Somnambulist\ValueObjects\Types\Auth\PublicPrivateKey:
+    type: embeddable
+
+    fields:
+        publicKey:
+            type: string
+            length: 64
+
+        privateKey:
+            type: string
+            length: 255

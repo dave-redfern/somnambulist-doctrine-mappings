@@ -1,0 +1,15 @@
+Somnambulist\Tests\Entities\ValueObjects\Purchaser:
+    type: embeddable
+
+    embedded:
+        email:
+            class: Somnambulist\ValueObjects\Types\Identity\EmailAddress
+            columnPrefix: false
+
+    fields:
+        name:
+            type: string
+
+        country:
+            type: Somnambulist\ValueObjects\Types\Geography\Country
+
