@@ -2,6 +2,7 @@ Somnambulist\ValueObjects\Types\Identity\EmailAddress:
     type: embeddable
 
     fields:
-        email:
+        value:
             type: string
-            length: 255
+            column: email
+            length: 100

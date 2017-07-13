@@ -1,0 +1,8 @@
+Somnambulist\ValueObjects\Types\PhoneNumber:
+    type: embeddable
+
+    fields:
+        value:
+            type: string
+            column: phone
+            length: 20
