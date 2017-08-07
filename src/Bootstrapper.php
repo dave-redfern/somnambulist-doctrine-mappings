@@ -33,8 +33,8 @@ use Somnambulist\ValueObjects\Types\Money;
 /**
  * Class Bootstrapper
  *
- * @package    Somnambulist\Doctrine\Enumerations
- * @subpackage Somnambulist\Doctrine\Enumerations\Bootstrapper
+ * @package    Somnambulist\Doctrine
+ * @subpackage Somnambulist\Doctrine\Bootstrapper
  */
 class Bootstrapper
 {
@@ -63,9 +63,9 @@ class Bootstrapper
      */
     public static function registerTypes()
     {
-        Type::addType('json', Types\JsonCollectionType::class);
-        Type::addType('jsonb', Types\JsonCollectionType::class);
-        Type::addType('json_collection', Types\JsonCollectionType::class);
+        Type::hasType('json') ?: Type::addType('json', Types\JsonCollectionType::class);
+        Type::hasType('jsonb') ?: Type::addType('jsonb', Types\JsonCollectionType::class);
+        Type::hasType('json_collection') ?: Type::addType('json_collection', Types\JsonCollectionType::class);
         Type::overrideType('date', Types\DateType::class);
         Type::overrideType('datetime', Types\DateTimeType::class);
         Type::overrideType('datetimetz', Types\DateTimeTzType::class);

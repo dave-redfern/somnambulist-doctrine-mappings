@@ -3,7 +3,6 @@
 namespace Somnambulist\Tests\Doctrine;
 
 use Doctrine\Common\Cache\ArrayCache;
-use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\Configuration;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\Driver\YamlDriver;
@@ -11,11 +10,6 @@ use Doctrine\ORM\Tools\SchemaTool;
 use PHPUnit\Framework\TestCase;
 use Somnambulist\Collection\Collection;
 use Somnambulist\Doctrine\Bootstrapper;
-use Somnambulist\Doctrine\Types\DateTimeType;
-use Somnambulist\Doctrine\Types\DateTimeTzType;
-use Somnambulist\Doctrine\Types\DateType;
-use Somnambulist\Doctrine\Types\JsonCollectionType;
-use Somnambulist\Doctrine\Types\TimeType;
 use Somnambulist\Tests\Entities\Order;
 use Somnambulist\Tests\Entities\ValueObjects\Purchaser;
 use Somnambulist\ValueObjects\Types\DateTime\DateTime;
@@ -28,10 +22,10 @@ use Somnambulist\ValueObjects\Types\Money\CurrencyCode;
 use Somnambulist\ValueObjects\Types\Money\Money;
 
 /**
- * Class DomainEventPublisherTest
+ * Class MappingTest
  *
- * @package    Somnambulist\Tests\DomainEvents\Publishers\Doctrine
- * @subpackage Somnambulist\Tests\DomainEvents\Publishers\Doctrine\DomainEventPublisherTest
+ * @package    Somnambulist\Tests\Doctrine
+ * @subpackage Somnambulist\Tests\Doctrine\MappingTest
  */
 class MappingTest extends TestCase
 {
