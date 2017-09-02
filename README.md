@@ -73,27 +73,31 @@ To register the types add the following to your application bootstrap:
 
 To use the types and enumerations, in your mapping files set the type appropriately:
 
-    fields:
-        createdAt:
-            type: datetime
-        
-        attributes:
-            type: json
+```yaml
+fields:
+    createdAt:
+        type: datetime
+    
+    attributes:
+        type: json
 
-        country:
-            type: Somnambulist\ValueObjects\Types\Geography\Country
-        
-        currency:
-            type: Somnambulist\ValueObjects\Types\Money\Currency
+    country:
+        type: Somnambulist\ValueObjects\Types\Geography\Country
+    
+    currency:
+        type: Somnambulist\ValueObjects\Types\Money\Currency
+```
 
 To use the value-objects:
 
-    embedded:
-        contact:
-            class: Somnambulist\ValueObjects\Types\Identity\EmailAddress
-            
-        homepage:
-            class: Somnambulist\ValueObjects\Types\Web\Url
+```yaml
+embedded:
+    contact:
+        class: Somnambulist\ValueObjects\Types\Identity\EmailAddress
+        
+    homepage:
+        class: Somnambulist\ValueObjects\Types\Web\Url
+```
 
 When using embeddables, be sure to have added the necessary mapping files.
 
