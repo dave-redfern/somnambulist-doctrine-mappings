@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+2017-09-02
+----------
+
+ * update mapping information for Uuid
+ * update dependencies
+
 2017-08-07
 ----------
 

@@ -2,5 +2,5 @@ Somnambulist\ValueObjects\Types\Identity\Uuid:
     type: embeddable
 
     fields:
-        uuid:
+        value:
             type: guid
