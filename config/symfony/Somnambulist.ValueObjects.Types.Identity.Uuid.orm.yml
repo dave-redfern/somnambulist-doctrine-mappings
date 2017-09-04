@@ -4,3 +4,4 @@ Somnambulist\ValueObjects\Types\Identity\Uuid:
     fields:
         value:
             type: guid
+            column: uuid
