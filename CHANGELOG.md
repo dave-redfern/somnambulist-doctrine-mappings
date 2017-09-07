@@ -1,6 +1,13 @@
 Change Log
 ==========
 
+2017-09-07
+----------
+
+ * added XML mapping files
+ * moved YAML files into a YAML folder
+ * changed Symfony names to use Symfony's naming conventions
+
 2017-09-02
 ----------
 

@@ -99,7 +99,44 @@ embedded:
         class: Somnambulist\ValueObjects\Types\Web\Url
 ```
 
+Or in XML format:
+
+```xml
+<entity name="My\Entity">
+    <embedded name="contact" class="Somnambulist\ValueObjects\Types\Identity\EmailAddress" />
+    <embedded name="homepage" class="Somnambulist\ValueObjects\Types\Web\Url" />
+</entity>
+```
+
 When using embeddables, be sure to have added the necessary mapping files.
+
+### Configuring Types for Symfony
+
+Within a Symfony project, add a new mapping area to your orm configuration within the `doctrine` section:
+
+```yaml
+doctrine:
+    # snip ...
+    orm:
+        mappings:
+            App\Entities:
+                mapping:   true
+                type:      yml
+                dir:       '%kernel.project_dir%/config/mappings/entities'
+                is_bundle: false
+                prefix:    App\Entities
+
+            Somnambulist\ValueObjects\Types:
+                mapping:   true
+                type:      xml
+                dir:       '%kernel.project_dir%/config/mappings/somnambulist'
+                is_bundle: false
+                prefix:    Somnambulist\ValueObjects\Types
+```
+
+Then either copy or symlink the appropriate config files from vendor config folder to your projects
+mapping config section. If you have different requirements for field type, copy and update as appropriate.
+It is recommended to copy and not link the mapping files to avoid issues with this library changing.
 
 ### Links
 

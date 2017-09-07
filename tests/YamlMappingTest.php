@@ -27,7 +27,7 @@ use Somnambulist\ValueObjects\Types\Money\Money;
  * @package    Somnambulist\Tests\Doctrine
  * @subpackage Somnambulist\Tests\Doctrine\MappingTest
  */
-class MappingTest extends TestCase
+class YamlMappingTest extends TestCase
 {
 
     /**
@@ -48,7 +48,7 @@ class MappingTest extends TestCase
 
         $driver = new YamlDriver([
             __DIR__ . '/_data/mappings',
-            __DIR__ . '/../config/doctrine',
+            __DIR__ . '/../config/yaml/doctrine',
         ]);
         $config = new Configuration();
         $config->setMetadataCacheImpl(new ArrayCache());
