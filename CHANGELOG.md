@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+2017-10-18
+----------
+
+ * added UUID type for instances when there is a UUID type error
+
 2017-09-07
 ----------
 
