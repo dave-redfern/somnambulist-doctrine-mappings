@@ -1,10 +1,16 @@
 Change Log
 ==========
 
+2017-10-24
+----------
+
+ * add NullableGenericEloquentEnumeration and added null check to default constructors
+
 2017-10-18
 ----------
 
  * added UUID type for instances when there is a UUID type error
+   can also add a mapping for uuid to Doctrine guid type.
 
 2017-09-07
 ----------

@@ -44,6 +44,10 @@ class CountryEnumeration
      */
     public function __invoke($value, $class, $platform)
     {
+        if (is_null($value)) {
+            return null;
+        }
+
         if (CountryCode::hasValue($value)) {
             return Country::create($value);
         }

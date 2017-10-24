@@ -19,19 +19,16 @@
 namespace Somnambulist\Doctrine\Enumerations\Constructors;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
+use Eloquent\Enumeration\AbstractEnumeration;
 use InvalidArgumentException;
-use Somnambulist\ValueObjects\Types\Money\Currency;
-use Somnambulist\ValueObjects\Types\Money\CurrencyCode;
 
 /**
- * Class CurrencyEnumeration
+ * Class NullableGenericEloquentEnumeration
  *
- * Builds a Currency value object from the currency code enumeration.
- *
- * @package    Somnambulist\Doctrine\Enumerations\Constructors
- * @subpackage Somnambulist\Doctrine\Enumerations\Constructors\CurrencyEnumeration
+ * @package    Somnambulist\Doctrine\Enumerations
+ * @subpackage Somnambulist\Doctrine\Enumerations\NullableGenericEloquentEnumeration
  */
-class CurrencyEnumeration
+class NullableGenericEloquentEnumeration
 {
 
     /**
@@ -39,19 +36,21 @@ class CurrencyEnumeration
      * @param string           $class
      * @param AbstractPlatform $platform
      *
-     * @return Currency
+     * @return AbstractEnumeration
      * @throws InvalidArgumentException
      */
     public function __invoke($value, $class, $platform)
     {
-        if (is_null($value)) {
-            return null;
+        /** @var AbstractEnumeration $class */
+        if (null !== $member = $class::memberOrNullByValue($value)) {
+            return $member;
         }
 
-        if (CurrencyCode::hasValue($value)) {
-            return Currency::create($value);
-        }
-
-        throw new InvalidArgumentException(sprintf('"%s" is not a valid value for "%s"', $value, Currency::class));
+        throw new InvalidArgumentException(sprintf(
+            '"%s" is not a valid value for "%s"; should be one of: "%s"',
+            $value,
+            $class,
+            implode(', ', $class::members())
+        ));
     }
 }

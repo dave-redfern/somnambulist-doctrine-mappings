@@ -41,6 +41,10 @@ class GenericEloquentEnumeration
      */
     public function __invoke($value, $class, $platform)
     {
+        if (is_null($value)) {
+            return null;
+        }
+
         /** @var AbstractEnumeration $class */
         if (null !== $member = $class::memberOrNullByValue($value)) {
             return $member;
