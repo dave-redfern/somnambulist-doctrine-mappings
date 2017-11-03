@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+2017-11-03
+----------
+
+ * fix incorrect mapping information
+
 2017-10-24
 ----------
 
