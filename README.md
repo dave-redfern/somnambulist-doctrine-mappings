@@ -1,3 +1,7 @@
+# Moved to https://github.com/dave-redfern/somnambulist-domain
+
+This repository has been archived. Please update to the combined package.s
+
 ## Doctrine Mappings for Value Objects and Enumerations
 
 Provides a basic set of mapping information for the somnambulist/value-objects library for
